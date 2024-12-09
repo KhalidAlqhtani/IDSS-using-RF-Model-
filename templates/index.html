@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Allocation IDSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Budgeting Rule Predictor</h1>
+        <form action="/predict" method="POST">
+            <input type="number" name="salary" placeholder="Salary (SAR)" required>
+            <input type="number" name="monthly_debt" placeholder="Monthly Debt (SAR)" required>
+            <input type="number" name="elementary_expenses" placeholder="Elementary Expenses (SAR)" required>
+            <input type="number" name="number_of_children" placeholder="Number of Children" required>
+
+            <label for="state">State:</label>
+            <select name="state" id="state" required>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+            </select>
+
+            <label for="sex">Sex:</label>
+            <select name="sex" id="sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="goal">Goal:</label>
+            <select name="goal" id="goal" required>
+                <option value="savings">Savings</option>
+                <option value="investment">Investment</option>
+            </select>
+
+            <label for="employment_status">Employment Status:</label>
+            <select name="employment_status" id="employment_status" required>
+                <option value="employed">Employed</option>
+                <option value="student">Student</option>
+                <option value="unemployed">Unemployed</option>
+            </select>
+
+            <input type="number" name="age" placeholder="Age" required>
+
+            <button type="submit">Get Prediction</button>
+        </form>
+
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+        <div class="explanation">
+            {{ rule_explanation }}
+        </div>
+    </div>
+</body>
+</html>
