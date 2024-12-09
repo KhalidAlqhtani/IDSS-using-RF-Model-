@@ -19,7 +19,7 @@ kiwisolver==1.4.7
 matplotlib==3.9.3
 matplotlib-inline==0.1.7
 nest-asyncio==1.6.0
-numpy==2.2.0
+numpy==1.22.4
 openpyxl==3.1.5
 packaging==24.1
 pandas==2.2.3
@@ -48,3 +48,5 @@ tzdata==2024.2
 wcwidth==0.2.13
 gunicorn==20.1.0
 Flask==2.2.3
+Werkzeug==2.2.3
+qrcode==6.1
