@@ -47,3 +47,4 @@ typing_extensions==4.12.2
 tzdata==2024.2
 wcwidth==0.2.13
 gunicorn==20.1.0
+Flask==2.2.3
