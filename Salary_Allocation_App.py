@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import joblib
 import numpy as np
 
+
 # Initialize Flask app
 app = Flask(__name__)
 # Load the saved model
@@ -33,6 +34,9 @@ def predict():
         goal = request.form['goal']
         goal_Savings = 1 if goal == 'savings' else 0
 
+        # Encode 'goal_Spending'
+        goal_Spending = 1 if goal == 'spending' else 0
+
         # Encode employment status
         employment_status = request.form['employment_status']
         employment_status_Student = 1 if employment_status == 'student' else 0
@@ -57,7 +61,7 @@ def predict():
 
         # Combine all features into a single input array
         input_features = np.array([[salary, monthly_debt, elementary_expenses, number_of_children,
-                                    state_Single, sex_Male, goal_Savings, employment_status_Student,
+                                    state_Single, sex_Male, goal_Savings, goal_Spending, employment_status_Student,
                                     employment_status_Unemployed, age_group_encoded,
                                     debt_to_income_ratio, savings_ratio]])
 
