@@ -4,10 +4,8 @@ import numpy as np
 
 # Initialize Flask app
 app = Flask(__name__)
-
 # Load the saved model
 model = joblib.load('salary_allocation_model.pkl')
-
 # Define the home route
 @app.route('/')
 def home():
