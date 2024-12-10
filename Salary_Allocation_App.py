@@ -2,7 +2,6 @@ from flask import Flask, request, render_template
 import joblib
 import numpy as np
 
-
 # Initialize Flask app
 app = Flask(__name__)
 # Load the saved model
