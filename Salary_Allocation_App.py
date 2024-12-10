@@ -53,7 +53,7 @@ def predict():
 
         # Calculate derived features
         debt_to_income_ratio = monthly_debt / salary if salary > 0 else 0
-        savings_ratio = (salary - monthly_debt - elementary_expenses) / salary if salary > 0 else 0
+        savings_ratio = elementary_expenses / salary if salary > 0 else 0
 
         # Combine all features into a single input array
         input_features = np.array([[salary, monthly_debt, elementary_expenses, number_of_children,
